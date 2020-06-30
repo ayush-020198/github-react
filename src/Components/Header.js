@@ -1,26 +1,32 @@
 import React, {Component} from 'react';
-import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
+import {Navbar, Nav} from 'react-bootstrap';
 class Header extends Component{
+
+    onLogin(){
+        this.props.onLogin();
+    }
+
+    onLogout(){
+        this.props.onLogout();
+    }
+
     render(){
-        return( <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+
+        let page;
+        if(this.props.idToken){
+            page = <Nav.Link onClick={this.onLogout.bind(this)} href="#home">Logout</Nav.Link>
+        }
+        else {
+            page = <Nav.Link onClick={this.onLogin.bind(this)} href="#home">Login</Nav.Link>
+        }
+
+        return( <Navbar style={{backgroundColor: '#eedad1'}} expand="lg">
+        <Navbar.Brand href="https://ayush-020198.github.io/Portfolio/">Github</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-            </NavDropdown>
+          <Nav className="mr-auto" style={{position: 'relative', left: '1700px'}}>
+              {page}
           </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
-          </Form>
         </Navbar.Collapse>
       </Navbar>)
     }

@@ -1,38 +1,106 @@
-.App {
+body {
+  background: #383e56;
+}
+
+a {
+  font-weight: bolder;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#card {
+  width: 30%;
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+
+
+.search-box input[type='search'] {
+  display: flex;
+  width: 577px;
+  font-size: 20px;
+  border: 0;
+  border-radius: 10px;
+  padding: .75rem .9375rem .9375rem;
+  background: #e6ebed;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.notfound {
+  background: #fff;
+  padding: 1.875rem;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.notfound h2 {
+  font-size: 2rem;
+  color: #27ae60;
+  margin-bottom: .625rem;
+}
+.notfound p {
+  font-size: 1rem;
+  color: #000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.github-profile-info {
+  background: #fff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+.github-profile-info img {
+  width: 150px;
+  height: 150px;
+  display: block;
+}
+.github-profile-info h2 a {
+  font-size: 30px;
+  color: #2368bd;
+}
+.github-profile-info h3 {
+  font-size: 1.1885rem;
+  color: #bdcbce;
+}
+.github-profile-state {
+  background: #ffa931;
+  text-align: center;
+  border-radius: 10px ;
+  padding: 1.875rem .9375rem;
+}
+.github-profile-state ul {
+  direction: ltr;
+}
+.github-profile-state li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.github-profile-state a {
+  color: #fff;
+}
+.github-profile-state i {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: normal;
+  display: block;
+}
+.github-profile-state span {
+  font-size: 20px;
+  letter-spacing: .06rem;
+  color: #27ae60;
+}
+
+.notloggedin {
+  color: #d4b5b0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  position: relative;
+  top: 400px;
 }
